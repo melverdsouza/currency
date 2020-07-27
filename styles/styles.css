@@ -60,19 +60,26 @@ select:focus, select:active {
   text-align: center;
   padding: 10px 25px;
   border-radius: 10px;
-  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .flux-cards-list .each-flux-card h6 {
   color: #000000;
   font-size: 18px;
-  margin: 10% 0%;
+  margin: 5px 0%;
 }
 
 .flux-cards-list .each-flux-card h5 {
   color: #2ea810;
   font-size: 20px;
   font-weight: bold;
-  margin: 10% 0%;
+  margin: 10px 0%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
 /*# sourceMappingURL=styles.css.map */

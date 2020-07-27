@@ -9,18 +9,20 @@
   </head>
   <body>
     <div class="container">
-      <select name="currency-list" id="currency-list">
+      <select
+        name="currency-list"
+        id="currency-list"
+        onchange="changeCurrency()"
+      >
         <option value="USD">USD</option>
       </select>
       <div class="flux-list">
         <h4>Popular fluctuations</h4>
-        <div class="flux-cards-list">
-          <div class="each-flux-card">
-            <h6>USD</h6>
-            <h5>76.54</h5>
-          </div>
-        </div>
+        <div class="flux-cards-list"></div>
       </div>
+      <select name="currency-list" id="conversion-amt">
+        <option value="USD">USD</option>
+      </select>
     </div>
   </body>
 </html>
