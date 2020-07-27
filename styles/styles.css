@@ -52,12 +52,12 @@ select:focus, select:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-y: hidden;
 }
 
 .flux-cards-list .each-flux-card {
   background-color: white;
   text-align: center;
-  width: 200px;
   padding: 10px 25px;
   border-radius: 10px;
   margin-left: 3%;

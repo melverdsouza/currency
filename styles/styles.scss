@@ -49,10 +49,10 @@ select {
 
 .flux-cards-list {
   display: flex;
+  overflow-y: hidden;
   .each-flux-card {
     background-color: white;
     text-align: center;
-    width: 200px;
     padding: 10px 25px;
     border-radius: 10px;
     margin-left: 3%;
