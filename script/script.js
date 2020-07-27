@@ -18,7 +18,7 @@ function loadPageData(data) {
   Object.keys(data["rates"]).map((currencyName) =>
     currencyDropdown(currencyName)
   );
-  fluxCards(data);
+  // fluxCards(data);
   console.log(data);
 }
 

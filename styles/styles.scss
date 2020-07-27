@@ -13,13 +13,14 @@ body {
 }
 
 #currency-list {
-  position: relative;
+  background-color: #fffefe;
   font-size: 28px;
   font-weight: bold;
   color: #224bb5;
-  padding: 1% 2%;
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25);
+  padding: 2% 3%;
+  box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.25);
   border: none;
+  text-align: center;
   border-radius: 5px;
   margin-top: 5%;
   option {
@@ -28,11 +29,43 @@ body {
   }
 }
 
+select {
+  text-indent: 1px;
+  text-overflow: "";
+  appearance: none;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
 .flux-list {
   h4 {
-    font-size: 18px;
-    font-weight: 700;
     color: #312f2f;
     opacity: 0.75;
+    font-size: 20px;
+  }
+}
+
+.flux-cards-list {
+  display: flex;
+  .each-flux-card {
+    background-color: white;
+    text-align: center;
+    width: 200px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin-left: 3%;
+    h6 {
+      color: #000000;
+      font-size: 18px;
+      margin: 10% 0%;
+    }
+    h5 {
+      color: #2ea810;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10% 0%;
+    }
   }
 }
