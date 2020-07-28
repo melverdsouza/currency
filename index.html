@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <script src="./script/script.js"></script>
-    <title>KD Currency App</title>
+    <title>MD currency page</title>
   </head>
   <body>
     <div class="container">
@@ -23,6 +23,31 @@
       <select name="currency-list" id="conversion-amt">
         <option value="USD">USD</option>
       </select>
+      <div class="conversion-section">
+        <div class="rate">
+          <h6>Rate</h6>
+          <h5>76.45</h5>
+        </div>
+        <div class="flex-col-end">
+          <img src="./assets/close_icon.svg" alt="multiply" />
+        </div>
+        <div class="local-curr">
+          <h6>Local Curr.</h6>
+          <input
+            type="number"
+            name="localcurr-num"
+            id="localcurr-num"
+            value="1"
+          />
+        </div>
+        <div class="flex-col-end">
+          <img src="./assets/equal_icon.svg" alt="equal to" />
+        </div>
+        <div class="amount">
+          <h6>Amount</h6>
+          <h5>1000</h5>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -5,6 +5,9 @@ body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
   background-color: #ebebeb;
+  @media (min-width: 769px) {
+    display: none;
+  }
 }
 
 .container {
@@ -62,7 +65,7 @@ select {
       margin: 5px 0%;
     }
     h5 {
-      color: #2ea810;
+      color: #224bb5;
       font-size: 20px;
       font-weight: bold;
       margin: 10px 0%;
@@ -73,4 +76,69 @@ select {
 ::-webkit-scrollbar {
   width: 0px; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+#conversion-amt {
+  background-color: #fffefe;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 2% 3%;
+  box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.25);
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 5%;
+  option {
+    font-size: 18px;
+    border: none;
+  }
+}
+
+.conversion-section {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 4fr 0.5fr 3fr;
+  grid-column-gap: 10px;
+  position: relative;
+  margin: 5% 0px;
+  h6 {
+    font-size: 14px;
+    color: black;
+    opacity: 0.4;
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+  }
+  h5 {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin: 5px 0px;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    width: 60%;
+    font-size: 20px;
+    margin: 0 auto;
+    font-weight: 700;
+    padding: 0px 10px;
+  }
+  .amount {
+    h5 {
+      color: #224bb5;
+    }
+  }
+  .flex-col-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  .local-curr {
+    display: flex;
+    flex-direction: column;
+  }
 }

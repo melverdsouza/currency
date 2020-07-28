@@ -36,6 +36,10 @@ function currencyDropdown(currencyName) {
   optionTag.innerHTML = `${currencyName}`;
   optionTag.setAttribute("value", `${currencyName}`);
   currencyList.appendChild(optionTag);
+
+  // conversion currency dropdown
+  let conversionAmt = document.getElementById("conversion-amt");
+  conversionAmt.appendChild(optionTag);
 }
 
 // add fluctuation card for each currency

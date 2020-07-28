@@ -6,6 +6,12 @@ body {
   background-color: #ebebeb;
 }
 
+@media (min-width: 769px) {
+  body {
+    display: none;
+  }
+}
+
 .container {
   width: 90%;
   margin: 0 auto;
@@ -70,7 +76,7 @@ select:focus, select:active {
 }
 
 .flux-cards-list .each-flux-card h5 {
-  color: #2ea810;
+  color: #224bb5;
   font-size: 20px;
   font-weight: bold;
   margin: 10px 0%;
@@ -81,5 +87,91 @@ select:focus, select:active {
   /* Remove scrollbar space */
   background: transparent;
   /* Optional: just make scrollbar invisible */
+}
+
+#conversion-amt {
+  background-color: #fffefe;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 2% 3%;
+  -webkit-box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.25);
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 5%;
+}
+
+#conversion-amt option {
+  font-size: 18px;
+  border: none;
+}
+
+.conversion-section {
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 0.5fr 4fr 0.5fr 3fr;
+      grid-template-columns: 2fr 0.5fr 4fr 0.5fr 3fr;
+  grid-column-gap: 10px;
+  position: relative;
+  margin: 5% 0px;
+}
+
+.conversion-section h6 {
+  font-size: 14px;
+  color: black;
+  opacity: 0.4;
+  text-align: center;
+  margin: 20px 0px 10px 0px;
+}
+
+.conversion-section h5 {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  margin: 5px 0px;
+}
+
+.conversion-section input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  width: 60%;
+  font-size: 20px;
+  margin: 0 auto;
+  font-weight: 700;
+  padding: 0px 10px;
+}
+
+.conversion-section .amount h5 {
+  color: #224bb5;
+}
+
+.conversion-section .flex-col-end {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.conversion-section .flex-col-end img {
+  margin-bottom: 10px;
+}
+
+.conversion-section .local-curr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=styles.css.map */
