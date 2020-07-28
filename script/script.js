@@ -38,8 +38,8 @@ function currencyDropdown(currencyName) {
   currencyList.appendChild(optionTag);
 
   // conversion currency dropdown
-  let conversionAmt = document.getElementById("conversion-amt");
-  conversionAmt.appendChild(optionTag);
+  // let conversionAmt = document.getElementById("conversion-amt");
+  // conversionAmt.appendChild(optionTag);
 }
 
 // add fluctuation card for each currency
