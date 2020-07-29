@@ -4,6 +4,8 @@ window.onload = (event) => {
   getData();
 };
 
+let fullData = {};
+
 // make fetch request on page load
 function getData() {
   let date = new Date();
@@ -17,6 +19,7 @@ function getData() {
 }
 
 function loadPageData(data) {
+  fullData = data;
   // add main currency dropdown
   Object.keys(data["rates"]).map((currencyName) =>
     currencyDropdown(currencyName)
@@ -36,6 +39,7 @@ function currencyDropdown(currencyName) {
   optionTag.innerHTML = `${currencyName}`;
   optionTag.setAttribute("value", `${currencyName}`);
   currencyList.appendChild(optionTag);
+  forexDropdown(currencyName);
 }
 
 // add fluctuation card for each currency
@@ -51,14 +55,21 @@ function fluxCards(data) {
     let currAmt = document.createElement("h5");
     currAmt.innerText = data["rates"][curr].toFixed(2);
     eachFluxCard.appendChild(currAmt);
-    console.log(curr, data["rates"][curr]);
+    // console.log(curr, data["rates"][curr]);
   }
+  let rate = document.querySelector(".rate h5");
+  let conversionAmt = document.getElementById("conversion-amt");
+  rate.innerText = data["rates"][
+    conversionAmt[conversionAmt.selectedIndex].value
+  ].toFixed(2);
+  console.log(conversionAmt[conversionAmt.selectedIndex].value);
+  console.log(rate);
 }
 
-function conversionDisplay() {
-  let currencyList = document.getElementById("currency-list");
-  console.log(currencyList[currencyList.selectedIndex].value);
-}
+// function conversionDisplay() {
+//   let currencyList = document.getElementById("currency-list");
+//   console.log(currencyList[currencyList.selectedIndex].value);
+// }
 
 function changeCurrency() {
   let currencyList = document.getElementById("currency-list");
@@ -74,6 +85,7 @@ function changeCurrency() {
 }
 
 function newCurrency(data) {
+  fullData = data;
   const parent = document.getElementsByClassName("flux-cards-list")[0];
   while (parent.firstChild) {
     parent.firstChild.remove();
@@ -89,6 +101,31 @@ function newCurrency(data) {
     let currAmt = document.createElement("h5");
     currAmt.innerText = data["rates"][curr].toFixed(2);
     eachFluxCard.appendChild(currAmt);
-    console.log(curr, data["rates"][curr]);
+    // console.log(curr, data["rates"][curr]);
   }
+  forexChange();
+}
+
+// add forex dropdown on page load
+function forexDropdown(currencyName) {
+  let currencyAmt = document.getElementById("conversion-amt");
+  let optionTag = document.createElement("option");
+  optionTag.innerHTML = `${currencyName}`;
+  optionTag.setAttribute("value", `${currencyName}`);
+  currencyAmt.appendChild(optionTag);
+}
+
+// get conversion currency name
+function forexChange() {
+  let conversionAmt = document.getElementById("conversion-amt");
+  console.log(conversionAmt[conversionAmt.selectedIndex].value);
+  changeForexValue(conversionAmt[conversionAmt.selectedIndex].value);
+  console.log(fullData);
+}
+
+// change conversion currency value
+function changeForexValue(currency) {
+  let rate = document.querySelector(".rate h5");
+  rate.innerText = fullData["rates"][currency].toFixed(2);
+  console.log(rate);
 }

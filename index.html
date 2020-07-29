@@ -7,6 +7,7 @@
     <script src="./script/script.js"></script>
     <title>MD currency page</title>
   </head>
+
   <body>
     <div class="container">
       <select
@@ -20,13 +21,17 @@
         <h4>Popular fluctuations</h4>
         <div class="flux-cards-list"></div>
       </div>
-      <select name="currency-list" id="conversion-amt">
+      <select
+        name="conversion-amt"
+        id="conversion-amt"
+        onchange="forexChange()"
+      >
         <option value="USD">USD</option>
       </select>
       <div class="conversion-section">
         <div class="rate">
           <h6>Rate</h6>
-          <h5>76.45</h5>
+          <h5></h5>
         </div>
         <div class="flex-col-end">
           <img src="./assets/close_icon.svg" alt="multiply" />
@@ -38,6 +43,7 @@
             name="localcurr-num"
             id="localcurr-num"
             value="1"
+            onsubmit="multiply()"
           />
         </div>
         <div class="flex-col-end">
