@@ -26,9 +26,6 @@ function loadPageData(data) {
   );
   // add fluctuations for each currency
   fluxCards(data);
-  // Object.keys(data["rates"])
-  //   .filter((otherCurr) => otherCurr !== currencyList)
-  //   .map((currencyName) => conversionDisplay(currencyName));
   console.log(data);
 }
 
@@ -65,11 +62,6 @@ function fluxCards(data) {
   console.log(conversionAmt[conversionAmt.selectedIndex].value);
   console.log(rate);
 }
-
-// function conversionDisplay() {
-//   let currencyList = document.getElementById("currency-list");
-//   console.log(currencyList[currencyList.selectedIndex].value);
-// }
 
 function changeCurrency() {
   let currencyList = document.getElementById("currency-list");
@@ -128,4 +120,20 @@ function changeForexValue(currency) {
   let rate = document.querySelector(".rate h5");
   rate.innerText = fullData["rates"][currency].toFixed(2);
   console.log(rate);
+}
+
+// get the input value
+function inputCurr(event) {
+  let localcurrNum = document.getElementById("localcurr-num");
+  if (event.keyCode === 13) {
+    console.log(event.target.value);
+    if (event.target.value === "") {
+      localcurrNum.value = 1;
+    }
+    getForeignValue(event.target.value);
+  }
+}
+
+function getForeignValue(value) {
+  console.log("value", value);
 }

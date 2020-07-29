@@ -26,7 +26,6 @@
         id="conversion-amt"
         onchange="forexChange()"
       >
-        <option value="USD">USD</option>
       </select>
       <div class="conversion-section">
         <div class="rate">
@@ -43,7 +42,7 @@
             name="localcurr-num"
             id="localcurr-num"
             value="1"
-            onsubmit="multiply()"
+            onkeydown="inputCurr(event)"
           />
         </div>
         <div class="flex-col-end">

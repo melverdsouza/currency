@@ -76,7 +76,7 @@ select:focus, select:active {
 }
 
 .flux-cards-list .each-flux-card h5 {
-  color: #224bb5;
+  color: #2ea810;
   font-size: 20px;
   font-weight: bold;
   margin: 10px 0%;
@@ -112,8 +112,8 @@ select:focus, select:active {
   background-color: white;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 0.5fr 4fr 0.5fr 3fr;
-      grid-template-columns: 2fr 0.5fr 4fr 0.5fr 3fr;
+  -ms-grid-columns: 2fr 0.5fr 3fr 0.5fr 4fr;
+      grid-template-columns: 2fr 0.5fr 3fr 0.5fr 4fr;
   grid-column-gap: 10px;
   position: relative;
   margin: 5% 0px;
@@ -139,11 +139,10 @@ select:focus, select:active {
   height: 30px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  width: 60%;
+  width: 85%;
   font-size: 20px;
   margin: 0 auto;
   font-weight: 700;
-  padding: 0px 10px;
 }
 
 .conversion-section .amount h5 {
