@@ -151,7 +151,7 @@ function getForeignValue(value) {
   let rate = document.querySelector(".rate h5").innerText;
   console.log("total", value * rate);
   let amount = document.querySelector(".amount h5");
-  amount.innerText = value * rate;
+  amount.innerText = (value * rate).toFixed(2);
 }
 
 function recalculateAmt() {
