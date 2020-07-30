@@ -55,6 +55,9 @@ function fluxCards(data) {
     // console.log(curr, data["rates"][curr]);
   }
 
+  // add date
+  let addDate = document.querySelector(".flux-list h4");
+  addDate.innerText = `Date: ${data["date"]}`;
   // add rate on page load
   let rate = document.querySelector(".rate h5");
   let conversionAmt = document.getElementById("conversion-amt");
@@ -71,7 +74,7 @@ function fluxCards(data) {
 
 function changeCurrency() {
   let currencyList = document.getElementById("currency-list");
-  console.log(currencyList[currencyList.selectedIndex].value);
+  // console.log(currencyList[currencyList.selectedIndex].value);
   let date = new Date();
   fetch(
     `https://api.ratesapi.io/api/${date.getFullYear()}-${
@@ -102,6 +105,7 @@ function newCurrency(data) {
     // console.log(curr, data["rates"][curr]);
   }
   forexChange();
+  recalculateAmt();
 }
 
 // add forex dropdown on page load
@@ -116,7 +120,7 @@ function forexDropdown(currencyName) {
 // get conversion currency name
 function forexChange() {
   let conversionAmt = document.getElementById("conversion-amt");
-  console.log(conversionAmt[conversionAmt.selectedIndex].value);
+  // console.log(conversionAmt[conversionAmt.selectedIndex].value);
   changeForexValue(conversionAmt[conversionAmt.selectedIndex].value);
   console.log(fullData);
 }
@@ -126,6 +130,7 @@ function changeForexValue(currency) {
   let rate = document.querySelector(".rate h5");
   rate.innerText = fullData["rates"][currency].toFixed(2);
   console.log(rate);
+  recalculateAmt();
 }
 
 // get the input value
@@ -138,14 +143,19 @@ function inputCurr(event) {
     }
     getForeignValue(event.target.value);
   }
+  console.log(event);
 }
 
 // get foreign currency value
 function getForeignValue(value) {
   let rate = document.querySelector(".rate h5").innerText;
-  console.log("value", value);
-  console.log("rate", rate);
   console.log("total", value * rate);
   let amount = document.querySelector(".amount h5");
   amount.innerText = value * rate;
+}
+
+function recalculateAmt() {
+  let localcurrNum = document.getElementById("localcurr-num").value;
+  console.log(localcurrNum);
+  getForeignValue(localcurrNum);
 }
