@@ -118,8 +118,8 @@ select {
   }
   input {
     height: 30px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
     width: 85%;
     font-size: 20px;
     margin: 0 auto;
@@ -128,6 +128,7 @@ select {
   .amount {
     h5 {
       color: #224bb5;
+      font-size: 26px;
     }
   }
   .flex-col-end {

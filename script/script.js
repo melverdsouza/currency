@@ -54,13 +54,19 @@ function fluxCards(data) {
     eachFluxCard.appendChild(currAmt);
     // console.log(curr, data["rates"][curr]);
   }
+
+  // add rate on page load
   let rate = document.querySelector(".rate h5");
   let conversionAmt = document.getElementById("conversion-amt");
   rate.innerText = data["rates"][
     conversionAmt[conversionAmt.selectedIndex].value
   ].toFixed(2);
-  console.log(conversionAmt[conversionAmt.selectedIndex].value);
-  console.log(rate);
+  // console.log(conversionAmt[conversionAmt.selectedIndex].value);
+  console.log(rate.innerText);
+
+  // get amount on page load
+  let amount = document.querySelector(".amount h5");
+  amount.innerText = 1 * rate.innerText;
 }
 
 function changeCurrency() {
@@ -134,6 +140,12 @@ function inputCurr(event) {
   }
 }
 
+// get foreign currency value
 function getForeignValue(value) {
+  let rate = document.querySelector(".rate h5").innerText;
   console.log("value", value);
+  console.log("rate", rate);
+  console.log("total", value * rate);
+  let amount = document.querySelector(".amount h5");
+  amount.innerText = value * rate;
 }
